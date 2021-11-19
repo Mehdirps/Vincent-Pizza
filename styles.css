@@ -1,0 +1,125 @@
+* {
+    --narrow: 'PT Sans Narrow', sans-serif;
+    --open: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #121618;
+    color: white;
+}
+
+.header {
+    position: relative;
+}
+
+.logo-small {
+    width: 50%;
+    margin: auto;
+    padding: 50px;
+}
+
+.logo-small img {
+    width: 100%;
+}
+
+.logo {
+    display: none;
+}
+
+.infos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.coord {
+    display: flex;
+    align-items: center;
+}
+
+.phone-logo {
+    width: 50px;
+    height: 50px;
+}
+
+.phone-logo svg {
+    width: 100%;
+    height: 100%;
+}
+
+.number {
+    width: max-content;
+    margin: auto;
+}
+
+.number p {
+    margin: 0;
+}
+
+.number :first-child {
+    font-weight: bold;
+}
+
+.number :last-child {
+    color: rgb(121, 121, 121);
+}
+.infos{
+    display: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+    font-family: var(--open);
+    text-transform: uppercase;
+    font-size: .8rem;
+}
+
+li {
+    padding: 5px;
+    position: relative;
+    font-family: var(--narrow);
+}
+
+li::after {
+    content: ">";
+    font-size: 1rem;
+    color: white;
+}
+
+/* li:hover::after {
+    content: "";
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    bottom: -5px;
+    left: 50%;
+} */
+
+.burger,
+.close-burger {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 50px;
+    height: 50px;
+}
+
+.burger svg,
+.close-burger svg {
+    width: 100%;
+    height: 100%;
+}
+
+.burger {
+    display: initial;
+}
+.close-burger {
+    display: none;
+}
