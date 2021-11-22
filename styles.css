@@ -9,17 +9,18 @@ body {
     margin: 0;
 }
 
-.header {
+header {
     position: relative;
 }
 
 .logo-small {
-    width: 50%;
+    width: 200px;
     margin: auto;
     padding: 50px;
 }
 
 .logo-small img {
+    margin: auto;
     width: 100%;
 }
 
@@ -73,9 +74,23 @@ nav {
     border-top: solid 2px white;
 }
 
+header::after {
+    content: " ";
+    display: block;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 36px;
+    background: linear-gradient(#121618 0%, transparent 0%), -webkit-linear-gradient(135deg, #272220 33.33%, transparent 33.33%) 0 0%, #272220 linear-gradient(45deg, #27222000 33.33%, #121618 33.33%) 0 0%;
+    background-repeat: repeat-x;
+    background-size: 0px 100%, 9px 27px, 9px 27px;
+}
+
 ul {
     list-style: none;
     padding: 0;
+    margin-left: 20px;
 }
 
 li a {
@@ -83,7 +98,7 @@ li a {
     color: white;
     font-family: var(--open);
     text-transform: uppercase;
-    font-size: .8rem;
+    font-size: 1.2 rem;
 }
 
 li {
@@ -94,26 +109,16 @@ li {
 
 li::after {
     content: ">";
+    margin-left: 10px;
     font-size: 1rem;
     color: white;
 }
 
-/* li:hover::after {
-    content: "";
-    width: 20px;
-    height: 2px;
-    background-color: white;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    bottom: -5px;
-    left: 50%;
-} */
-
 .burger,
 .close-burger {
     position: absolute;
-    top: 10%;
-    right: 5%;
+    top: 40%;
+    right: 10px;
     width: 50px;
     height: 50px;
 }
@@ -236,18 +241,23 @@ figure {
     margin-bottom: 100px;
 }
 
-.btn1 p,
-.btn2 p {
+.btn1 a,
+.btn2 a {
     margin: 0;
     font-size: .8rem;
     font-family: var(--open);
     text-transform: uppercase;
+    color: white;
+    text-decoration: none;
 }
 
 .btn2 {
     background-color: #ffc851;
-    color: black;
     border: unset;
+}
+
+.btn2 a {
+    color: black;
 }
 
 .info-quality {
@@ -277,9 +287,10 @@ figure {
 .info-quality div p {
     font-family: var(--narrow);
     text-align: center;
+    margin: 20px;
 }
 
-.sales h3 {
+.sales-title {
     text-align: center;
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -293,7 +304,7 @@ figure {
 }
 
 .pizza figure {
-    width: 60%;
+    width: 50%;
     margin: auto;
 }
 
@@ -323,13 +334,16 @@ footer figure {
 
 address {
     display: flex;
+    justify-content: space-around;
 }
 
 .number {
+    margin: 0;
     font-family: var(--open);
 }
 
 .horaire {
+    margin: 0;
     font-family: var(--open);
     font-size: .8rem;
     color: rgb(114, 114, 114);
@@ -349,6 +363,11 @@ footer nav ul li::after {
     content: "";
 }
 
+footer nav ul li {
+    width: max-content;
+    margin: auto;
+}
+
 .social {
     width: max-content;
     margin: auto;
@@ -359,7 +378,214 @@ footer nav ul li::after {
 }
 
 .copyright {
+    text-align: center;
     font-size: .7rem;
     font-family: var(--open);
-    color: rgb(122, 122, 122);
+    color: rgb(77, 77, 77);
+}
+
+@media screen and (min-width:768px) {
+    .logo-small{
+        width: 300px;
+    }
+    .pizza figure {
+        width: 30%;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width:1240px) {
+    .logo-small {
+        display: none;
+    }
+
+    .pizza figure {
+        width: 30%;
+        margin: auto;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    header {
+        padding-top: 2%;
+    }
+
+    .infos {
+        width: 80%;
+        margin: auto;
+        display: flex;
+    }
+
+    nav {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        border: none;
+    }
+
+    .logo {
+        display: initial;
+        width: 20%;
+    }
+
+    .logo img {
+        width: 100%;
+    }
+
+    .cart {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .cart-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .cart-logo svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .info p {
+        text-align: right;
+        margin: 0%;
+    }
+
+    .number {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .price {
+        font-family: var(--narrow);
+        letter-spacing: 2px;
+    }
+
+    .items {
+        font-family: var(--narrow);
+        letter-spacing: 2px;
+        color: rgb(110, 110, 110);
+    }
+
+    ul {
+        margin: auto;
+        margin-top: 20px;
+        display: flex;
+        gap: 40px;
+    }
+    li{
+        width: max-content;
+    }
+    li::after {
+        content: "";
+    }
+
+    li a:hover::after {
+        content: "";
+        width: 20px;
+        height: 2px;
+        background-color: white;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        bottom: 0;
+        left: 40%;
+    }
+
+    li a {
+        font-size: 1rem;
+    }
+
+    .fake-diapo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: 80vh;
+    }
+
+    .pizza-info {
+        order: 1;
+    }
+
+    .fake-diapo figure {
+        order: 2;
+        width: 30%;
+    }
+
+    .title #right,
+    .title #left {
+        display: none;
+    }
+
+    .right,
+    .left {
+        display: initial;
+        cursor: pointer;
+    }
+
+    .other-info {
+        margin: unset;
+        width: max-content;
+    }
+
+    .btn1,
+    .btn2 {
+        margin: 0;
+    }
+
+    .info-quality {
+        padding: 100px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .sales {
+        width: 70%;
+        margin: auto;
+        display: flex;
+        gap: 60px;
+    }
+
+    .pizza figure {
+        width: 100%;
+    }
+
+    .logo-transp {
+        width: 10%;
+        margin-bottom: 50px;
+    }
+
+    address {
+        width: max-content;
+        margin: auto;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    footer nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    footer nav ul li {
+        margin: 0;
+    }
+
+    footer nav ul li a {
+        font-size: 1rem;
+    }
+
+    .copyright {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .social {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
 }
