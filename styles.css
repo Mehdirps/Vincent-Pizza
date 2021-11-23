@@ -75,21 +75,21 @@ nav {
 }
 
 header::after {
-    
-        /* Dents de cie avec background linear gradient */
 
-        background: linear-gradient(-45deg, #121618 6px, transparent 0), linear-gradient(45deg, #121618 6px, transparent 0);
-        background-repeat: repeat-x;
-        background-size: 10px 12px;
-        transform: rotate(180deg);
-        content: "";
-        display: block;
-        position: absolute;
-        top: 100%;
-        left: 0px;
-        width: 100%;
-        height: 12px;
-        z-index: 10;
+    /* Dents de cie avec background linear gradient */
+
+    background: linear-gradient(-45deg, #121618 6px, transparent 0), linear-gradient(45deg, #121618 6px, transparent 0);
+    background-repeat: repeat-x;
+    background-size: 10px 12px;
+    transform: rotate(180deg);
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 100%;
+    height: 12px;
+    z-index: 10;
 
     /* Dents de cie avec Clip-path */
 
@@ -171,6 +171,7 @@ li::after {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 70vh;
 }
 
 .left,
@@ -286,19 +287,21 @@ figure {
 .btn2 a {
     color: black;
 }
-.info-quality::before{
+
+.info-quality::before {
     background: linear-gradient(-45deg, #121618 6px, transparent 0), linear-gradient(45deg, #121618 6px, transparent 0);
-        background-repeat: repeat-x;
-        background-size: 10px 12px;
-        content: "";
-        display: block;
-        position: absolute;
-        bottom: 0;
-        left: 0px;
-        width: 100%;
-        height: 12px;
-        z-index: 10;
+    background-repeat: repeat-x;
+    background-size: 10px 12px;
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    width: 100%;
+    height: 12px;
+    z-index: 10;
 }
+
 .info-quality {
     position: relative;
     background-image: url(images/back_2.png);
@@ -482,8 +485,21 @@ footer nav ul li {
     }
 
     .cart-logo {
+        position: relative;
         width: 40px;
         height: 40px;
+    }
+
+    .cart-logo::after {
+        content: "0";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: yellow;
+        text-align: center;
+        border-radius: 50%;
+        line-height: 20px;
+        color: black;
     }
 
     .cart-logo svg {
@@ -527,6 +543,17 @@ footer nav ul li {
         content: "";
     }
 
+    li:first-child::after {
+        content: "";
+        width: 20px;
+        height: 2px;
+        background-color: white;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        bottom: 0;
+        left: 35%;
+    }
+
     li a:hover::after {
         content: "";
         width: 20px;
@@ -546,7 +573,24 @@ footer nav ul li {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        height: 80vh;
+        gap: 50px;
+        height: 70vh;
+    }
+
+    .title {
+        text-align: left;
+    }
+
+    .title h1 {
+        font-size: 3rem;
+    }
+
+    .title h2 {
+        padding-right: 30px;
+        margin: 0%;
+        margin-bottom: 3rem;
+        width: 100%;
+
     }
 
     .pizza-info {
@@ -630,5 +674,10 @@ footer nav ul li {
     .social {
         margin-top: 30px;
         margin-bottom: 30px;
+    }
+
+    .social svg {
+        width: 40px;
+        height: 40px;
     }
 }
